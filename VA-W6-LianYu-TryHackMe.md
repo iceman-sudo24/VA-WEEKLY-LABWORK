@@ -29,11 +29,15 @@
 | **Steghide** | Steganography | A tool used to hide or extract data from image and audio files. |
 | **SSH** | Gaining Access | Secure Shell, used for remote login to the target machine. |
 
----
+## 0. Prerequisite (LianYu Machine Connection)
+- I connected to the TryHackMe network with the VPN configuration downloaded on their website straight into KaliLinux
+- I started the machine in the LianYu Room and ran the command `sudo openvpn tryhackme.ovpn` in KaliLinux
+- I verified I was connected with `ip addr` to see the ``tun0`` interface
+
+<img width="321" height="325" alt="image" src="https://github.com/user-attachments/assets/c6087bee-f28d-4877-b88b-7b6d3ee727b0" />
 
 
 ## 1. Reconnaissance & Scanning
-
 First, we define the target IP and run a comprehensive Nmap scan to identify the attack surface.
 
 ```bash
