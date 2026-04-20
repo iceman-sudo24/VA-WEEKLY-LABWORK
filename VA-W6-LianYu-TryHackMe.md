@@ -24,16 +24,24 @@
 - I started the machine in the LianYu Room and ran the command `sudo openvpn tryhackme.ovpn` in KaliLinux
 - I verified I was connected with `ip addr` to see the ``tun0`` interface
 
+**Connection**
 <img width="321" height="325" alt="image" src="https://github.com/user-attachments/assets/c6087bee-f28d-4877-b88b-7b6d3ee727b0" />
 
+**Verification**
+<img width="610" height="293" alt="image" src="https://github.com/user-attachments/assets/3b8c0a47-f80c-417a-8874-55de824f4b9e" />
 
 ## 1. Reconnaissance & Scanning
 First, we define the target IP and run a comprehensive Nmap scan to identify the attack surface.
 
 ```bash
-export IP=10.48.187.151
-nmap -sC -sV -p initial_scan.txt $IP
+nmap -sC -sV -p- 10.48.187.151
 ```
+- `-sC` does this
+- `-sV` does this
+- `-p-` does this
+
+<img width="678" height="505" alt="image" src="https://github.com/user-attachments/assets/db1ee4d3-116e-4ea9-a245-6589cd9628bd" />
+
 
 - Results:
 Port 21: FTP (vsftpd 3.0.2)
