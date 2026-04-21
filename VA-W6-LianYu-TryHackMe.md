@@ -229,4 +229,6 @@ This permission was exploited using the pkexec binary to spawn a root shell: `su
 
 <img width="452" height="229" alt="image" src="https://github.com/user-attachments/assets/fe238279-5031-4547-8b35-d9d86c8d0675" />
 
+- --
+
 **The final flag: `THM{MY_W0RD_I5_MY_B0ND_IF_I_ACC3PT_YOUR_CONTRACT_THEN_IT_WILL_BE_COMPL3TED_OR_I'LL_BE_D34D}`**
