@@ -95,9 +95,21 @@ Visiting the website on Port 80 shows a web page with a synopsis of the 'Arrowve
 - We change the wordlist to medium.txt as it has a bigger range of names to compare to
 - `-t:` Was used to accelerate the enumeration process by specifying the number of CPU threads to use in the enumeration process
 
+- --
 
-gobuster dir -u http://$IP -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -t 64
-Found: /island
+<img width="689" height="229" alt="image" src="https://github.com/user-attachments/assets/e23d5c5f-c099-4d58-b04f-3d1055a03c28" />
+- This time an `/island` directory was found which will be investigated
+
+- --
+
+<img width="380" height="245" alt="image" src="https://github.com/user-attachments/assets/30e91f30-1fb8-441d-8e5e-313c3c4152a5" />
+
+- --
+
+<img width="662" height="346" alt="image" src="https://github.com/user-attachments/assets/2ad0ee7d-7697-41e0-b637-8227d5dc7fca" />
+- Viewing the page source revealed a code word: `Vigilante`
+
+- --
 
 Investigating Subdirectories
 Checking the source code of /island revealed the codeword "vigilante". We then scan the next layer:
