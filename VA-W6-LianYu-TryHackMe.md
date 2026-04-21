@@ -213,7 +213,7 @@ This gives us ss.zip. Unzipping this reveals two files, `passwd.txt` and `shado`
 
 ## 4. Privilege Escalation
 Once logged in as slade, `ls -la` was used to see the files and directories in the current directory
-- A `user.txt` was found and viewed with `cat` to reveal a flag ``THM{P30P7E_K33P_53CRET5_C0MPUT3R5_D0N`T}``
+- A `user.txt` was found and viewed with `cat` to reveal a **flag ``THM{P30P7E_K33P_53CRET5_C0MPUT3R5_D0N`T}``**
 
 - `sudo -l` was then used to check for the current users permissions (slades permissions.
 - The findings was that Slade can run `/usr/bin/pkexec` as root without a password
