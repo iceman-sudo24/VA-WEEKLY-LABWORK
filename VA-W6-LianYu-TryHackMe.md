@@ -64,28 +64,20 @@ First a comprehensive Nmap scan is ran on the target IP to identify the attack s
       services running.
 
 ## 2. Web Enumeration
-Visiting the website on Port 80 shows a basic theme. We perform directory brute-forcing to find hidden content.
 
+Visiting the website on Port 80 shows a web page with a synopsis of the 'Arrowverse' TV Series which we can infer is the theme of the TryHackMe. This is where gobuster directory brute-forcing will be perforned to find hidden content.
 
+- --
 
+<img width="681" height="407" alt="image" src="https://github.com/user-attachments/assets/0c552be0-78d9-404d-8b1f-a0edb30996e4" />
 
+- --
 
+- Viewing the page source doesn't show any viable/explicit clues or information
 
+<img width="686" height="332" alt="image" src="https://github.com/user-attachments/assets/d5d115cd-ce8b-4b42-8ec0-307965848496" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- --
 
 
 
