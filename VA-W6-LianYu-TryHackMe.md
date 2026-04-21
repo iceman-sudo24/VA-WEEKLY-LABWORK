@@ -161,42 +161,70 @@ After successfully logging in the command `ls -la` was used to list out everythi
 - The `-l` option stands for "long format" and provides detailed information about each file and directory. 
 - The `-a` option includes hidden files in the listing.
 
+The result was the existence of three image files: `Leave_me_alone.png, Queen's_Gambit.png and aa.jpg` 
 
+The `binary` command was ran to ensure image files aren't corrupted during transfer and `mget *` was used to
+download everything.
 
+<img width="684" height="466" alt="image" src="https://github.com/user-attachments/assets/ae6ca9d1-537b-4522-8c45-1ccfcbbed92b" />
+<img width="364" height="74" alt="image" src="https://github.com/user-attachments/assets/a453f801-bd7c-4319-95b6-f31be9f9ce72" />
 
+`exit` was used to leave the FTP session
 
-binary
-mget *
-Steganography Analysis
-We retrieve three images. Leave_me_alone.png has a corrupt header. We fix it using hexeditor to match the standard PNG signature (89 50 4E 47 0D 0A 1A 0A).
+- --
 
-The image reveals the passphrase: password.
+### Steganography Analysis ###
+Viewing the three images:
+- `Leave_me_alone.png` was a picture of a character, presumably from the Arrowverse TV Series
+- `aa.jpg` was a picture of some icon or a flag
+- `Queen's_Gambit.png` was a picture of a yacht/ship
+
+Analyzing the first image, `hexeditor` was used to look at its raw binary data to see if matches the standard PNG signature.
+
+<img width="402" height="455" alt="image" src="https://github.com/user-attachments/assets/743e55cd-9a29-409d-b5dc-64e1dd83aaf6" />
+
+It in fact does not and has a corrupt header. We fix it using hexeditor to match the standard PNG signature (89 50 4E 47 0D 0A 1A 0A)
+The following changes revealed a different image and a passphrase: `password`
+
+<img width="640" height="374" alt="image" src="https://github.com/user-attachments/assets/093bc0a5-3781-453c-86b9-e1112c8250f8" />
+
+- --
 
 Next, we extract hidden data from aa.jpg:
+- `steghide extract -sf aa.jpg`
 
-Bash
-steghide extract -sf aa.jpg
-# Passphrase: password
-This gives us ss.zip. Unzipping this reveals a file containing the SSH password for the user slade.
+<img width="273" height="81" alt="image" src="https://github.com/user-attachments/assets/53e9d541-a722-44fe-8030-eb98120d78b8" />
 
-SSH Login
-Bash
-ssh slade@$IP
+This gives us ss.zip. Unzipping this reveals two files, `passwd.txt` and `shado`.
+
+<img width="560" height="418" alt="image" src="https://github.com/user-attachments/assets/1d8b9901-0a4c-4402-99aa-39cc849e64b4" />
+
+- Using cat to view the contents of both files, we find a possible password in `shado` which is `M3tahuman`
+- The Queen's Gambit is a possible red herring for this task and we will proceed without it
+
+- --
+### SSH Login ###
+- Knowing the theme of this TryHackMe
+
+- We login through SSH using the name of the character in the images which is "slade"
+- `ssh slade@10.48.187.151`
+
+<img width="533" height="722" alt="image" src="https://github.com/user-attachments/assets/5115c477-971a-4b7c-b52b-de6f3e5667ba" />
 
 ## 4. Privilege Escalation
-Once logged in as slade, we check for sudo permissions:
+Once logged in as slade, `ls -la` was used to see the files and directories in the current directory
+- A `user.txt` was found and viewed with `cat` to reveal a flag ``THM{P30P7E_K33P_53CRET5_C0MPUT3R5_D0N`T}``
 
-Bash
-sudo -l
-Observation: Slade can run /usr/bin/pkexec as root without a password.
+- `sudo -l` was then used to check for the current users permissions (slades permissions.
+- The findings was that Slade can run `/usr/bin/pkexec` as root without a password
 
-Exploitation
-Using the pkexec binary to spawn a root shell:
+<img width="531" height="79" alt="image" src="https://github.com/user-attachments/assets/ca581561-f044-44f6-b68d-65bfc5a45039" />
 
-Bash
-sudo /usr/bin/pkexec /bin/sh
-Verification:
+- --
 
-Bash
-whoami  # Returns root
-cat /root/root.txt
+### Exploitation 
+This permission was exploited using the pkexec binary to spawn a root shell: `sudo /usr/bin/pkexec /bin/sh`
+- Verification of our escalation of privilege was done with `whoami` which returned `root`
+- Using `ls` revealed a single file `root.txt` which was the viewed with `cat` to obtain the last flag
+
+<img width="452" height="229" alt="image" src="https://github.com/user-attachments/assets/fe238279-5031-4547-8b35-d9d86c8d0675" />
