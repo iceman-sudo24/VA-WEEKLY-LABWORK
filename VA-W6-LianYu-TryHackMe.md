@@ -79,20 +79,23 @@ Visiting the website on Port 80 shows a web page with a synopsis of the 'Arrowve
 
 - --
 
+`gobuster dir -u http://10.49.187.151 -w /usr/share/wordlists/dirb/common.txt`
+- `dir:` Tells Gobuster to use directory-enumeration mode.
+- `-u:` Specifies the target URL (the "Purgatory" web server you found earlier).
+- `-w:` Points to a wordlist. This is a text file containing thousands of common folder names (like /admin, /login, /backup). Gobuster tries each one to see if it exists. (in this case we're using common.txt)
+
+- --
+
+<img width="683" height="324" alt="image" src="https://github.com/user-attachments/assets/e50d7ad2-ace7-424e-b697-2c408ec8b2b5" />
+- No useful results were found
+
+- --
+
+`gobuster dir -u http://10.49.187.151 -w /usr/share/wordlists/dirb/medium.txt -t 50`
+- We change the wordlist to medium.txt as it has a bigger range of names to compare to
+- `-t:` Was used to accelerate the enumeration process by specifying the number of CPU threads to use in the enumeration process
 
 
-
-
-
-
-
-
-
-
-Directory Discovery
-Using the medium.txt wordlist to find the hidden path:
-
-Bash
 gobuster dir -u http://$IP -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -t 64
 Found: /island
 
