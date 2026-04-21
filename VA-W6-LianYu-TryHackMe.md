@@ -42,13 +42,26 @@ First a comprehensive Nmap scan is ran on the target IP to identify the attack s
 - `-sV` Probes open ports to determine what software is running and its specific version number
 - `-p-` Scans all 65,535 possible TCP ports instead of just the top 1,000 "common" ones
 
+- --
+
 <img width="678" height="505" alt="image" src="https://github.com/user-attachments/assets/db1ee4d3-116e-4ea9-a245-6589cd9628bd" />
 
+- --
 
-- Results:
-Port 21: FTP (vsftpd 3.0.2)
-Port 22: SSH (OpenSSH 6.7p1)
-Port 80: HTTP (Apache 2.4.7)
+- **RESULTS**
+- A total of five ports were found
+    - `Port 21: FTP (vsftpd 3.0.2)`
+    - `Port 22: SSH (OpenSSH 6.7p1 Debian 5+deb8u8)`
+        - OpenSSH 6.7 is outdated and may be susceptible to user enumeration or specific older CVEs, though it is 
+          generally robust unless credentials are weak
+    - `Port 80: HTTP (Apache 2.4.7)`
+      - Site Title: "Purgatory"
+      - The server is running Apache. The custom title suggests a web application is hosted here (Purgatory)
+      - This is the primary attack surface where directory brute-forcing will be performed (using tools like
+      gobuster to find hidden files or admin panels.
+    - `Port 111/TCP & 36598/TCP — RPCBind / NFS (rpcbind 2-4 and status)`
+      - RPCBind is often a precursor to NFS (Network File System). The rpcinfo script output shows several RPC
+      services running.
 
 ## 2. Web Enumeration
 Visiting the website on Port 80 shows a basic theme. We perform directory brute-forcing to find hidden content.
