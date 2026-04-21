@@ -1,6 +1,6 @@
 # VA-W6-LianYu-TryHackMeRoom
 - Write up for the LianYu machine in TryHackMe
-- 
+
 ## 🚩 Room Information
 - **Target OS:** Linux
 - **Difficulty:** Easy
