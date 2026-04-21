@@ -31,14 +31,16 @@
 <img width="610" height="293" alt="image" src="https://github.com/user-attachments/assets/3b8c0a47-f80c-417a-8874-55de824f4b9e" />
 
 ## 1. Reconnaissance & Scanning
-First, we define the target IP and run a comprehensive Nmap scan to identify the attack surface.
+First a comprehensive Nmap scan is ran on the target IP to identify the attack surface.
 
-```bash
-nmap -sC -sV -p- 10.48.187.151
-```
-- `-sC` does this
-- `-sV` does this
-- `-p-` does this
+- `nmap -sC -sV -p- 10.48.187.151`
+- `-sC` Runs a collection of scripts from Nmap's Scripting Engine (NSE) to find common vulnerabilities and information
+  - Retrieving SSL/TLS certificates.
+  - Checking for anonymous FTP login.
+  - Identifying web server directories.
+  - Checking for basic, well-known misconfigurations.
+- `-sV` Probes open ports to determine what software is running and its specific version number
+- `-p-` Scans all 65,535 possible TCP ports instead of just the top 1,000 "common" ones
 
 <img width="678" height="505" alt="image" src="https://github.com/user-attachments/assets/db1ee4d3-116e-4ea9-a245-6589cd9628bd" />
 
@@ -48,8 +50,39 @@ Port 21: FTP (vsftpd 3.0.2)
 Port 22: SSH (OpenSSH 6.7p1)
 Port 80: HTTP (Apache 2.4.7)
 
-2. Web Enumeration
+## 2. Web Enumeration
 Visiting the website on Port 80 shows a basic theme. We perform directory brute-forcing to find hidden content.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Directory Discovery
 Using the medium.txt wordlist to find the hidden path:
