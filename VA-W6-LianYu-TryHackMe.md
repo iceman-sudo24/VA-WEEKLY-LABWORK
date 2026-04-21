@@ -98,7 +98,7 @@ Visiting the website on Port 80 shows a web page with a synopsis of the 'Arrowve
 - --
 
 <img width="689" height="229" alt="image" src="https://github.com/user-attachments/assets/e23d5c5f-c099-4d58-b04f-3d1055a03c28" />
-- This time an `/island` directory was found which will be investigated
+- This time an **/island** directory was found which will be investigated for any clues
 
 - --
 
@@ -107,34 +107,64 @@ Visiting the website on Port 80 shows a web page with a synopsis of the 'Arrowve
 - --
 
 <img width="662" height="346" alt="image" src="https://github.com/user-attachments/assets/2ad0ee7d-7697-41e0-b637-8227d5dc7fca" />
-- Viewing the page source revealed a code word: `Vigilante`
+- Fortunately, viewing the page source revealed a code word in the comments: `Vigilante`
 
 - --
 
-Investigating Subdirectories
-Checking the source code of /island revealed the codeword "vigilante". We then scan the next layer:
+- Investigating further, gobuster was ran again to enumerate the /island directory to find more hidden layers/subdirectories
 
-Bash
-gobuster dir -u http://$IP/island -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -t 64
-Found: /2100
+`gobuster dir -u http://10.49.187.151/island -w /usr/share/wordlists/dirb/medium.txt -t 50`
 
-Finding the Token
-Inside /2100, we look for specific file extensions as hinted in the source code:
+- The results of the scan revealed another directory **/2100**
 
-Bash
-gobuster dir -u http://$IP/island/2100 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -x .ticket -t 64
-Found: green_arrow.ticket
+<img width="598" height="363" alt="image" src="https://github.com/user-attachments/assets/628f9c51-094d-4683-b2cf-1eec222cb164" />
 
-Accessing the file reveals a Base58 encoded string: RTy8yhbQDscX.
+- --
 
-3. Gaining Access
-FTP Extraction
-We decode the string (result: password) and use it to log into the FTP service with the username vigilante.
+Inside the page source of **/2100**, a comment was found that details a possible file extension to look out for
 
-Bash
-ftp $IP
-# Username: vigilante
-# Password: password
+<img width="657" height="268" alt="image" src="https://github.com/user-attachments/assets/876a7674-6651-45d7-938f-8f0c7f544bf6" />
+
+- --
+
+- Gobuster is used again to further enumerate to find more subdirectories
+- `gobuster dir -u http://10.49.187.151/island -w /usr/share/wordlists/dirb/medium.txt -x .ticket -t 50`
+  - The `-x` flag is used to look out for specific file extensions, in this case `.ticket`
+- The results of the scan found the file **green_arrow.ticket**
+
+<img width="683" height="209" alt="image" src="https://github.com/user-attachments/assets/43ee09e7-3b1f-4a65-88d9-2ca448dd722e" />
+
+- --
+
+Accessing the file reveals a Base58 encoded string: RTy8yhbQDscX which will have to be decoded to view its true nature
+
+<img width="640" height="303" alt="image" src="https://github.com/user-attachments/assets/6d0c1d58-8784-451b-b22f-4e0667bd3ab3" />
+
+- --
+
+## 3. Gaining Access
+### Decoding Credentials
+- Taking the Base58 encoded string we found from the `green_arrow.ticket` file, we decode it with an echo command
+  - `echo "RTy8yhbQDscX" | base58 -d`
+- This revealed the string of text `!#th3h00d` which is possibly the password to use along with the username we discovered previously `vigilante`
+
+<img width="335" height="64" alt="image" src="https://github.com/user-attachments/assets/8b56ce19-46cb-4aa0-894d-ec244db0755f" />
+
+- --
+### FTP Exploitation
+
+- We connect to the FTP server with `ftp 10.49.187.151` and attempt the login with the username and password 
+- `Username: vigilante`
+- `Password: !#th3h00d`
+
+After successfully logging in the command `ls -la` was used to list out everything in the current directory
+- The `-l` option stands for "long format" and provides detailed information about each file and directory. 
+- The `-a` option includes hidden files in the listing.
+
+
+
+
+
 binary
 mget *
 Steganography Analysis
@@ -152,7 +182,8 @@ This gives us ss.zip. Unzipping this reveals a file containing the SSH password 
 SSH Login
 Bash
 ssh slade@$IP
-4. Privilege Escalation
+
+## 4. Privilege Escalation
 Once logged in as slade, we check for sudo permissions:
 
 Bash
