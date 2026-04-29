@@ -19,7 +19,7 @@ The first objective is to crack the login page on the web server.
 
 #### 1. Analyze the Form
 Before running the command, we inspect the page to find the **POST** parameters.
-* **Target URL:** `http://<MACHINE_IP>/login`
+* **Target URL:** `http://<10.49.154.94>/login`
 * **Form Data:** `username=^USER^&password=^PASS^`
 * **Failure Message:** `Your username or password is incorrect.`
 
@@ -27,13 +27,13 @@ Before running the command, we inspect the page to find the **POST** parameters.
 Run the following command to crack the web login:
 
 
-- hydra -l molly -P /usr/share/wordlists/rockyou.txt <MACHINE_IP> http-post-form "/login:username=^USER^&password=^PASS^:F=Your username or password is incorrect." -V -t 4
+- hydra -l molly -P /usr/share/wordlists/rockyou.txt 10.49.154.94 http-post-form "/login:username=^USER^&password=^PASS^:F=Your username or password is incorrect." -V -t 4
 
 **Technical Breakdown:**
-- -l molly: Sets the static username to "molly".
-- -P .../rockyou.txt: Points to the password wordlist.
-- http-post-form: Specifies the module for web-based logins.
-- "/login...F=...": This string tells Hydra where to post, what data to send, and that the login Failed if the specific error message is seen.
+- `-l molly`: Sets the static username to "molly".
+- `-P .../rockyou.txt`: Points to the password wordlist.
+- `http-post-form`: Specifies the module for web-based logins.
+- `"/login...F=..."`: This string tells Hydra where to post, what data to send, and that the login Failed if the specific error message is seen.
 
 We are basically telling Hydra: "Go to this website, try every password in this list for the user 'molly.' If you see the words 'incorrect,' you failed—keep going. If you don't see those words, you found the password!"
 
@@ -44,7 +44,7 @@ Once we have a lead, we check if the user "molly" reused her credentials or has 
 
 #### 1. Execute Hydra for SSH
 
-`hydra -l molly -P /usr/share/wordlists/rockyou.txt <MACHINE_IP> ssh -t 4 -V`
+`hydra -l molly -P /usr/share/wordlists/rockyou.txt <10.49.154.94> ssh -t 4 -V`
 
 **Technical Breakdown:**
 - ssh: Directs Hydra to use the Secure Shell protocol (Port 22).
@@ -58,7 +58,7 @@ We are knocking on the machine's "back door" (SSH) very quickly with a list of k
 Now that we have the credentials, we log in to claim the flags.
 
 #### 1. SSH Login
-`ssh molly@<MACHINE_IP>`
+`ssh molly@<10.49.154.94>`
 - Enter password obtained: `butterfly`
 #### 2. Locate Flags
 `ls`
