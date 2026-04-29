@@ -11,8 +11,8 @@ A comprehensive guide to performing network login brute-forcing using Hydra, cov
 | **SSH Client** | Remote Access | Used to gain shell access once credentials are recovered. |
 
 ## Target Profile
-- NAME: Hydra
-- IP: 10.49.154.94
+- **NAME:** Hydra
+- **IP:** 10.49.154.94
 
 ---
 
