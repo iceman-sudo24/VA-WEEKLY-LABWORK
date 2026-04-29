@@ -37,7 +37,7 @@ Run the following command to crack the web login:
 
 We are basically telling Hydra: "Go to this website, try every password in this list for the user 'molly.' If you see the words 'incorrect,' you failed—keep going. If you don't see those words, you found the password!"
 
-
+---
 
 ### Phase 2: SSH Exploitation
 Once we have a lead, we check if the user "molly" reused her credentials or has other passwords for SSH access.
@@ -51,6 +51,8 @@ Once we have a lead, we check if the user "molly" reused her credentials or has 
 - -t 4: Limits parallel connections to 4. SSH servers often have "MaxStartups" settings that will block you if you try too many connections at once.
 - -V: Verbose mode—shows every login attempt.
 We are knocking on the machine's "back door" (SSH) very quickly with a list of keys. We limit the speed so the machine doesn't get overwhelmed and stop talking to us.
+
+---
 
 ### Phase 3: Post-Exploitation (Flag Recovery)
 Now that we have the credentials, we log in to claim the flags.
