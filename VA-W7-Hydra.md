@@ -1,8 +1,7 @@
 # TryHackMe: Hydra Room Writeup 
-
 A comprehensive guide to performing network login brute-forcing using Hydra, covering Web and SSH exploitation.
 
-## 🛠️ Tools Used
+## Tools Used
 
 | Tool | Category | Description |
 | :--- | :--- | :--- |
@@ -13,7 +12,7 @@ A comprehensive guide to performing network login brute-forcing using Hydra, cov
 
 ---
 
-## 🚀Step-by-Step Execution
+## Step-by-Step Execution
 
 ### Phase 1: Web Form Brute Force
 The first objective is to crack the login page on the web server.
