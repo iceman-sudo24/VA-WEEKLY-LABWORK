@@ -101,7 +101,7 @@ We are knocking on the machine's "back door" (SSH) very quickly with a list of k
 Now that we have the credentials, we log in to claim the flags.
 
 #### 1. SSH Login
-- `ssh molly@<10.49.154.94>`: We establish and SSH connectiom with the IP and username and enter the password obtained: `butterfly`
+- `ssh molly@<10.49.154.94>`: We establish and SSH connectiom with the IP and username and enter the password obtained: `butterfly` (I mistyped the first time which is why there is a re-prompt in the screenshot below)
 #### 2. Locate Flags
 - `ls`: list files in the home directory to see if there are any text files which can contain the final flag
 #### 3. Read the final flag contents
