@@ -50,13 +50,14 @@ Before running the command, we inspect the page to find the **POST** parameters.
 ### 2. Execute Hydra
 Run the following command to crack the web login:
 
-`hydra -l molly -P /usr/share/wordlists/rockyou.txt 10.49.154.94 http-post-form "/login:username=^USER^&password=^PASS^:F=Your username or password is incorrect." -V -t 4`
+`hydra -l molly -P /usr/share/wordlists/rockyou.txt 10.49.154.94 http-post-form "/login:username=^USER^&password=^PASS^:F=Your username or password is incorrect." -v -t 4`
 
 **Technical Breakdown:**
 - `-l molly`: Sets the static username to "molly" (we get "molly" from the tryhackme page)
 - `-P .../rockyou.txt`: Points to the password wordlist.
 - `http-post-form`: Specifies the module for web-based logins.
 - `"/login...F=..."`: This string tells Hydra where to post, what data to send, and that the login Failed if the specific error message is seen.
+- `-v`: Verbose mode—shows every login attempt.
 
 This is basically telling Hydra: "Go to this website, try every password in this list for the user 'molly.' If you see the words 'incorrect,' you failed—keep going. If you don't see those words, you found the password!"
 
@@ -85,7 +86,7 @@ Once we have the lead with the password, we check if the user "molly" reused her
 **Technical Breakdown:**
 - `ssh`: Directs Hydra to use the Secure Shell protocol (Port 22).
 - `-t 4`: Limits parallel connections to 4. SSH servers often have "MaxStartups" settings that will block you if you try too many connections at once.
-- `-V`: Verbose mode—shows every login attempt.
+- `-v`: Verbose mode—shows every login attempt.
 
 We are knocking on the machine's "back door" (SSH) very quickly with a list of keys. We limit the speed so the machine doesn't get overwhelmed and stop talking to us.
 
