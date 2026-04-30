@@ -97,6 +97,12 @@ A typical attacker would follow this path:
 ## QUESTION 5: ANALYSE THE NESSUS FILE
 Upload to your nessus (Network_Scan.nessus) and analyse the files. Focus on critical or high findings that was identifies in analysis named “Ghostcat”.
 
+---
+
+<img width="1575" height="1011" alt="Screenshot 2026-04-30 at 8 44 26 PM" src="https://github.com/user-attachments/assets/566aefb0-760a-4186-99b9-7bce64eeb5d6" />
+
+---
+
 ### What is the affected Port number?
 ### What is the Affected protocol?
 ### What is the CVSS Score of vulnerability found?
