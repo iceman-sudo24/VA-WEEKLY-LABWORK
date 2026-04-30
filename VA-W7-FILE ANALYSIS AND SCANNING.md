@@ -1,4 +1,6 @@
-#VA-W7-LAB-FILE ANALYSIS AND SCANNING WRITEUP
+# VA-W7-LAB-FILE ANALYSIS AND SCANNING WRITEUP
+
+## TOOLS USED
 
 ## QUESTION 1: FIND THE FLAG (Wireshark)
 Analysing the PCAP file for Question 1 provided 41 packets of data of the ICMP protocol. 
