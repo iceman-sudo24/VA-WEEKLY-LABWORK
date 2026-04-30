@@ -8,7 +8,7 @@ Analysing the PCAP file for Question 1 provided 41 packets of data of the ICMP p
 After browsing through, Packet 37 was the only Packet with a length of 70 and after viewing its data there seems to be a suspicious long 
 string of text: `U1VDVEYyMDIze2FpX2lzX2Nvb2x9`
 
-After enabling the 'Show Packet Bytes' feature in Wireshark I decoded the text as Base64 to ASCII which led to the first flag: `SUCTF2023{ai_is_cool}`
+After enabling the 'Show Packet Bytes' feature in Wireshark I decoded the text as Base64 to ASCII plaintext which led to the first flag: `SUCTF2023{ai_is_cool}`
 
 ---
 
@@ -30,7 +30,8 @@ After enabling the 'Show Packet Bytes' feature in Wireshark I decoded the text a
 ## QUESTION 2: FIND THE FLAG (Wireshark)
 Analysing the PCAP file for Question 2 provided 794 packets of data that varied between ICMP, TCP and FTP protocols.
 
-Analysing parts of the TCP stream presented a conversation between two individuals/machines regarding the topic of Tic-Tac-Toe. Another 
+Analysing parts of the TCP stream presented a conversation between two individuals/machines regarding the topic of Tic-Tac-Toe. Another finding
+was of 
 
 ---
 
