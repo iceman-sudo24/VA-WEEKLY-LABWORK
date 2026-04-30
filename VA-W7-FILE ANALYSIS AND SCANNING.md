@@ -14,7 +14,7 @@ Analysing the PCAP file for Question 1 provided 41 packets of data of the ICMP p
 After browsing through, Packet 37 was the only Packet with a length of 70 and after viewing its data there seems to be a suspicious long 
 string of text: `U1VDVEYyMDIze2FpX2lzX2Nvb2x9`
 
-After enabling the 'Show Packet Bytes' feature in Wireshark I decoded the text as Base64 to ASCII plaintext which led to the first flag: `SUCTF2023{ai_is_cool}`
+After enabling the 'Show Packet Bytes' feature in Wireshark I decoded the text as Base64 to ASCII plaintext which led to Question 1's flag: `SUCTF2023{ai_is_cool}`
 
 ---
 
@@ -31,16 +31,44 @@ After enabling the 'Show Packet Bytes' feature in Wireshark I decoded the text a
 
 ---
 
-
-
 ## QUESTION 2: FIND THE FLAG (Wireshark)
 Analysing the PCAP file for Question 2 provided 794 packets of data that varied between ICMP, TCP and FTP protocols.
-
-Analysing parts of the TCP stream presented a conversation between two individuals/machines regarding the topic of Tic-Tac-Toe. Another finding
-was of 
+<img width="1567" height="999" alt="Screenshot 2026-04-30 at 9 12 44 PM" src="https://github.com/user-attachments/assets/08c6b35e-64ef-4aa9-a115-dce688aea7fc" />
 
 ---
 
+Analysing parts of the TCP stream presented a conversation between two individuals/machines regarding the topic of Tic-Tac-Toe. 
+<img width="1380" height="921" alt="Screenshot 2026-04-30 at 9 05 12 PM" src="https://github.com/user-attachments/assets/e04d467c-6d67-4749-981f-fc6e585f1d3f" />
+
+---
+
+Packet 205 had readable text of the name of a `.txt` file: `global_thermonuclear_war.gamerules.txt`
+<img width="1404" height="957" alt="Screenshot 2026-04-30 at 9 17 13 PM" src="https://github.com/user-attachments/assets/24a26822-c465-4400-929e-e250fee7f976" />
+
+--- 
+
+Relating to the thermonuclear text file above, another finding was of a FTP Control Channel which captured the command-and-response exchange between the client and the server. This was viewed with the `Follow` feature where `Follow TCP Stream` was selected.
+<img width="1040" height="998" alt="Screenshot 2026-04-30 at 7 41 20 PM" src="https://github.com/user-attachments/assets/cb67f242-1887-4f72-ad3b-472bec9b379b" />
+
+---
+
+I think I was getting quite hot to the flag so the winning find was when I found Packet 216 which was on the FTP-Data protocol where the server sent the data of the file to the client.
+- **The Request:** In Packets 209 and 210, the client and server negotiated a passive connection to move data
+- **The Command:** In Packet 213, the client sent the command RETR global_thermonuclear_war.gamerules.txt, which basically means "send me that file"
+- **The Data (Packet 216):** Because the server agreed to the request, it opened a new stream (the Data Channel) and sent the file's content in Packet 216
+
+The visible contents were of a link, `https://tinyurl.com/yr5zprz4`,  where when pasted into my browser brought me to a google doc with interesting shapes.
+<img width="1074" height="354" alt="Screenshot 2026-04-30 at 9 24 21 PM" src="https://github.com/user-attachments/assets/34663da7-6f37-4923-932b-873d5a11f982" />
+
+---
+
+It look like it related to Tic-Tac-Toe due to the shapes but after image searching I found out that this could possible be a Pigpen Cipher. However after trying out an online Pigpen Cipher I couldn't get any meaningful data or readable results so I consulted AI. The results of the consultation led to the flag's supposed form being `EXPLOITLOL`.
+
+Therefore Question 2's flag is: `EXPLOITLOL` (which I hope is correct)
+
+---
+
+Particularly for Question 2, Wiresharks filter feature was incredibly useful in finding this flag.
 
 ## QUESTION 3: NMAP INTERPRETATION
 ### What can an attacker do with each port?
