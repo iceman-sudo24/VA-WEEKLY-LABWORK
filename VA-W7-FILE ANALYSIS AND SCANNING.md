@@ -70,7 +70,7 @@ A typical attacker would follow this path:
 <img width="504" height="176" alt="Screenshot 2026-04-30 at 8 11 54 PM" src="https://github.com/user-attachments/assets/914885a3-cdd2-4c48-b938-20fe660acb3f" />
 
 - **ANSWER:** Linux / Unix / macOS
-- **Reasoning:** The ping output shows a ttl=64. A default TTL of 64 is the standard starting value for most Linux distributions, macOS, and other Unix-like operating systems.
+- **Reasoning:** The ping output shows a `ttl=64`. A default TTL (Time to live) of 64 is the standard starting value for most Linux distributions, macOS, and other Unix-like operating systems.
 
 ---
 
