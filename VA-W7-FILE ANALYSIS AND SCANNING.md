@@ -1,3 +1,4 @@
+
 # VA-W7-LAB-FILE ANALYSIS AND SCANNING WRITEUP
 
 ## TOOLS USED
@@ -100,13 +101,18 @@ Upload to your nessus (Network_Scan.nessus) and analyse the files. Focus on crit
 ---
 
 <img width="1575" height="1011" alt="Screenshot 2026-04-30 at 8 44 26 PM" src="https://github.com/user-attachments/assets/566aefb0-760a-4186-99b9-7bce64eeb5d6" />
+<img width="1575" height="1016" alt="Screenshot 2026-04-30 at 8 49 08 PM" src="https://github.com/user-attachments/assets/e7c71f3f-6e59-481e-9ff2-c2d7c4e7b58d" />
+
 
 ---
 
 ### What is the affected Port number?
 - 8009
+<img width="115" height="70" alt="Screenshot 2026-04-30 at 8 47 31 PM" src="https://github.com/user-attachments/assets/a97abb73-e927-4b6e-b55a-244f41983831" />
 ### What is the Affected protocol?
 - AJP (Apache JServ Protocol)
+<img width="874" height="151" alt="Screenshot 2026-04-30 at 8 48 08 PM" src="https://github.com/user-attachments/assets/e6c8879e-d9d6-474b-a78a-207c4830e6a7" />
+
 ### What is the CVSS Score of vulnerability found?
 - 9.8 (Critical)
 ### Can you find any exploit related to this vulnerability?
