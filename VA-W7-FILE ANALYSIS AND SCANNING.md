@@ -1,4 +1,3 @@
-
 # VA-W7-LAB-FILE ANALYSIS AND SCANNING WRITEUP
 
 ## TOOLS USED
@@ -116,10 +115,12 @@ Upload to your nessus (Network_Scan.nessus) and analyse the files. Focus on crit
 
 ### What is the CVSS Score of vulnerability found?
 - 9.8 (Critical)
+<img width="164" height="27" alt="Screenshot 2026-04-30 at 8 51 17 PM" src="https://github.com/user-attachments/assets/5ee973a3-033c-45ad-83f9-549d1ae87bd4" />
   
 ### Can you find any exploit related to this vulnerability?
 - There are several exploits. Examples are the ajp_shooter Python script and the `auxiliary/admin/http/tomcat_ghostcat` module in Metasploit.
+
   
 ### Find CVE for this vulnerability.
 - CVE-2020-1938
-
+<img width="310" height="79" alt="Screenshot 2026-04-30 at 8 50 49 PM" src="https://github.com/user-attachments/assets/49678df6-128e-4a0d-a38d-90509178ce02" />
