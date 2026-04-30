@@ -112,7 +112,6 @@ Upload to your nessus (Network_Scan.nessus) and analyse the files. Focus on crit
 ### What is the Affected protocol?
 - AJP (Apache JServ Protocol)
 <img width="874" height="151" alt="Screenshot 2026-04-30 at 8 48 08 PM" src="https://github.com/user-attachments/assets/e6c8879e-d9d6-474b-a78a-207c4830e6a7" />
-
 ### What is the CVSS Score of vulnerability found?
 - 9.8 (Critical)
 ### Can you find any exploit related to this vulnerability?
