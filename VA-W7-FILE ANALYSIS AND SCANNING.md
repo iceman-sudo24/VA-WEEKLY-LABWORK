@@ -1,4 +1,4 @@
-<img width="514" height="117" alt="Screenshot 2026-04-30 at 8 12 30 PM" src="https://github.com/user-attachments/assets/64b2c592-5a2f-4436-9fc2-ab58f9571b06" /># VA-W7-LAB-FILE ANALYSIS AND SCANNING WRITEUP
+# VA-W7-LAB-FILE ANALYSIS AND SCANNING WRITEUP
 
 ## TOOLS USED
 
