@@ -1,6 +1,12 @@
 # VA-W7-LAB-FILE ANALYSIS AND SCANNING WRITEUP
 
 ## TOOLS USED
+| Tool | Category | Description |
+| :--- | :--- | :--- |
+| **Wireshark** | Packet Analyzer | A network protocol analyzer used to inspect packet captures (.pcap) and extract hidden data from ICMP payloads and FTP data streams. |
+| **Nessus** | Vulnerability Scanner | A comprehensive security auditing tool used to identify critical vulnerabilities, such as Ghostcat, and evaluate system risks using CVSS scores. |
+| **Pigpen Cipher** | Cryptographic Reference | A geometric simple substitution cipher key used to decode visual symbols into plaintext strings hidden within files. |
+
 
 ## QUESTION 1: FIND THE FLAG (Wireshark)
 Analysing the PCAP file for Question 1 provided 41 packets of data of the ICMP protocol. 
