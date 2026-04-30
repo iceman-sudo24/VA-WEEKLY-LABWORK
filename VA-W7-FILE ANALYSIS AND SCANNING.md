@@ -104,8 +104,13 @@ Upload to your nessus (Network_Scan.nessus) and analyse the files. Focus on crit
 ---
 
 ### What is the affected Port number?
+- 8009
 ### What is the Affected protocol?
+- AJP (Apache JServ Protocol)
 ### What is the CVSS Score of vulnerability found?
+- 9.8 (Critical)
 ### Can you find any exploit related to this vulnerability?
+- There are several exploits. Examples are the ajp_shooter Python script and the `auxiliary/admin/http/tomcat_ghostcat` module in Metasploit.
 ### Find CVE for this vulnerability.
+- CVE-2020-1938
 
