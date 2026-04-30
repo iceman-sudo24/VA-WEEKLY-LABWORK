@@ -69,21 +69,24 @@ A typical attacker would follow this path:
 ### IMAGE 1
 <img width="504" height="176" alt="Screenshot 2026-04-30 at 8 11 54 PM" src="https://github.com/user-attachments/assets/914885a3-cdd2-4c48-b938-20fe660acb3f" />
 
-**ANSWER:**
+- **ANSWER:** Linux / Unix / macOS
+- **Reasoning:** The ping output shows a ttl=64. A default TTL of 64 is the standard starting value for most Linux distributions, macOS, and other Unix-like operating systems.
 
 ---
 
 ### IMAGE 2
 <img width="281" height="194" alt="Screenshot 2026-04-30 at 8 12 18 PM" src="https://github.com/user-attachments/assets/72bca447-b27a-4a49-b134-55eca046fd28" />
 
-**ANSWER:**
+- **ANSWER:** Network Device (e.g., Cisco Router/Switch)
+- **Reasoning:** The Wireshark packet details show Time to live: 255. A starting TTL of 255 is predominantly used by network infrastructure hardware, particularly Cisco IOS devices.
 
 ---
 
 ### IMAGE 3
 <img width="516" height="116" alt="Screenshot 2026-04-30 at 8 12 45 PM" src="https://github.com/user-attachments/assets/c0a81c1c-01db-44da-8a71-5491c9096b1f" />
 
-**ANSWER:**
+- **ANSWER:** Windows
+- **Reasoning:** The ping replies show `ttl=128`. A default TTL of 128 is the standard starting value for Microsoft Windows operating systems.
 
 ---
 
