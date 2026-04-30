@@ -52,10 +52,7 @@ Relating to the thermonuclear text file above, another finding was of a FTP Cont
 
 ---
 
-I think I was getting quite hot to the flag so the winning find was when I found Packet 216 which was on the FTP-Data protocol where the server sent the data of the file to the client.
-- **The Request:** In Packets 209 and 210, the client and server negotiated a passive connection to move data
-- **The Command:** In Packet 213, the client sent the command RETR global_thermonuclear_war.gamerules.txt, which basically means "send me that file"
-- **The Data (Packet 216):** Because the server agreed to the request, it opened a new stream (the Data Channel) and sent the file's content in Packet 216
+I think I was getting quite hot to the flag so the winning find was when I found Packet 216 which was on the FTP-Data protocol where the server sent the data of the file to the client as part of the client's request to the server.
 
 The visible contents were of a link, `https://tinyurl.com/yr5zprz4`,  where when pasted into my browser brought me to a google doc with interesting shapes.
 <img width="1074" height="354" alt="Screenshot 2026-04-30 at 9 24 21 PM" src="https://github.com/user-attachments/assets/34663da7-6f37-4923-932b-873d5a11f982" />
