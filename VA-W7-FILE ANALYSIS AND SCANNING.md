@@ -28,6 +28,9 @@ After enabling the 'Show Packet Bytes' feature in Wireshark I decoded the text a
 
 
 ## QUESTION 2: FIND THE FLAG (Wireshark)
+Analysing the PCAP file for Question 2 provided 794 packets of data that varied between ICMP, TCP and FTP protocols.
+
+Analysing parts of the TCP stream presented a conversation between two individuals/machines regarding the topic of Tic-Tac-Toe. Another 
 
 ---
 
@@ -119,7 +122,7 @@ Upload to your nessus (Network_Scan.nessus) and analyse the files. Focus on crit
   
 ### Can you find any exploit related to this vulnerability?
 - There are several exploits. Examples are the ajp_shooter Python script and the `auxiliary/admin/http/tomcat_ghostcat` module in Metasploit.
-- Elaborating further on the metaspoilt exploit, the process is when an attacker utilizes the `auxiliary/admin/http/tomcat_ghostcat` module, which is specifically designed to interact with the AJP connector on port 8009. After setting the target IP address, the module sends a manipulated AJP request that tricks the Tomcat server into retrieving and displaying the contents of protected files, such as `/WEB-INF/web.xml`. These files often contains the "blueprint" of the application and sensitive database passwords. As a result, this automated process allows an attacker to quickly extract sensitive configuration data or credentials without needing to manually create complex protocol packets.
+- Elaborating further on the metaspoilt exploit, the process is when an attacker utilizes the `auxiliary/admin/http/tomcat_ghostcat` module, which is specifically designed to interact with the AJP connector on port 8009. After setting the target IP address, the module sends a manpiulated AJP request that tricks the Tomcat server into retrieving and displaying the contents of protected files, such as `/WEB-INF/web.xml`. These files often contains the "blueprint" of the application and sensitive database passwords. As a result, this automated process allows an attacker to quickly extract sensitive configuration data or credentials without needing to manually create complex protocol packets.
  - Sources:
    - https://github.com/rapid7/metasploit-framework/blob/master/documentation/modules/auxiliary/admin/http/tomcat_ghostcat.md
    - https://nvd.nist.gov/vuln/detail/cve-2020-1938
