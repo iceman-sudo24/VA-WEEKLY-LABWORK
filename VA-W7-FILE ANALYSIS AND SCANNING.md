@@ -33,29 +33,29 @@ After enabling the 'Show Packet Bytes' feature in Wireshark I decoded the text a
 
 
 ## QUESTION 3: NMAP INTERPRETATION
-What can an attacker do with each port?
-What vulnerabilities are likely present based on the version?
-Which one is the highest risk and why?
-What attack path can be built from this?
-What should be the remediation?
+### What can an attacker do with each port?
+### What vulnerabilities are likely present based on the version?
+### Which one is the highest risk and why?
+### What attack path can be built from this?
+### What should be the remediation?
 
 ---
 
 ## QUESTION 4: IDENTIFY THE OS (OS Fingerprinting) - TTL
 
-- IMAGE 1
+### IMAGE 1
 <img width="504" height="176" alt="Screenshot 2026-04-30 at 8 11 54 PM" src="https://github.com/user-attachments/assets/914885a3-cdd2-4c48-b938-20fe660acb3f" />
 ANSWER:
 
 ---
 
-- IMAGE 2
+### IMAGE 2
 <img width="281" height="194" alt="Screenshot 2026-04-30 at 8 12 18 PM" src="https://github.com/user-attachments/assets/72bca447-b27a-4a49-b134-55eca046fd28" />
 ANSWER:
 
 ---
 
-- IMAGE 3
+### IMAGE 3
 <img width="516" height="116" alt="Screenshot 2026-04-30 at 8 12 45 PM" src="https://github.com/user-attachments/assets/c0a81c1c-01db-44da-8a71-5491c9096b1f" />
 ANSWER:
 
@@ -68,9 +68,9 @@ ANSWER:
 ## QUESTION 5: ANALYSE THE NESSUS FILE
 Upload to your nessus (Network_Scan.nessus) and analyse the files. Focus on critical or high findings that was identifies in analysis named “Ghostcat”.
 
-- What is the affected Port number?
-- What is the Affected protocol?
-- What is the CVSS Score of vulnerability found?
-- Can you find any exploit related to this vulnerability?
-- Find CVE for this vulnerability.
+### What is the affected Port number?
+### What is the Affected protocol?
+### What is the CVSS Score of vulnerability found?
+### Can you find any exploit related to this vulnerability?
+### Find CVE for this vulnerability.
 
