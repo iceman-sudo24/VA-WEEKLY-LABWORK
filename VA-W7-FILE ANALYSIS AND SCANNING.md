@@ -61,7 +61,7 @@ The visible contents were of a link, `https://tinyurl.com/yr5zprz4`,  where when
 
 It look like it related to Tic-Tac-Toe due to the shapes but after image searching I found out that this could possible be a Pigpen Cipher. However after trying out an online Pigpen Cipher I couldn't get any meaningful data or readable results so I consulted AI. The results of the consultation led to the flag's supposed form being `EXPLOITLOL`.
 
-Therefore Question 2's flag is: `EXPLOITLOL` (which I hope is correct)
+Therefore possibly Question 2's flag is: `EXPLOITLOL` (which makes sense in the context of this lab and I hope is correct)
 
 ---
 
