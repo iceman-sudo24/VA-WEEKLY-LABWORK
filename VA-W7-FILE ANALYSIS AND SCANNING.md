@@ -42,7 +42,7 @@ Analysing parts of the TCP stream presented a conversation between two individua
 
 ---
 
-Packet 205 had readable text of the name of a `.txt` file: `global_thermonuclear_war.gamerules.txt`
+Packet 205 had readable ASCII plaintext of the name of a `.txt` file: `global_thermonuclear_war.gamerules.txt`
 <img width="1404" height="957" alt="Screenshot 2026-04-30 at 9 17 13 PM" src="https://github.com/user-attachments/assets/24a26822-c465-4400-929e-e250fee7f976" />
 
 --- 
