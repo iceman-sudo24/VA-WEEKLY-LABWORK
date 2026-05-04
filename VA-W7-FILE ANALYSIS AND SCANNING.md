@@ -59,9 +59,11 @@ The visible contents were of a link, `https://tinyurl.com/yr5zprz4`,  where when
 
 ---
 
-It look like it related to Tic-Tac-Toe due to the shapes but after image searching I found out that this could possible be a Pigpen Cipher. However after trying out an online Pigpen Cipher I couldn't get any meaningful data or readable results so I consulted AI. The results of the consultation led to the flag's supposed form being `EXPLOITLOL`.
+It look like it related to Tic-Tac-Toe due to the shapes but after image searching I found out that this could possible be a Pigpen Cipher (which is a substitution cipher that represents letters using fragments of a tic-tac-toe grid). After finding a Pigpen Cipher online from [DCode](https://www.dcode.fr/tic-tac-toe-cipher)  
 
-Therefore possibly Question 2's flag is: `EXPLOITLOL` (which makes sense in the context of this lab and I hope is correct)
+<img width="836" height="527" alt="Screenshot 2026-05-04 at 7 22 34 PM" src="https://github.com/user-attachments/assets/9f3f4bc2-dec0-40b1-8776-76b3518606d8" />
+
+Therefore Question 2's flag is: `SUCTF2023{EXMACHINAAVA{` (which makes sense in the context of this lab and I hope is correct)
 
 ---
 
