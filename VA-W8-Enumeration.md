@@ -1,10 +1,15 @@
 # VA-W8-ENUMERATION
-- Doing 10 Enumeration related tasks or challenges with Windows as the Attacker and Metasploitable2 as the Victim
-- Zenmap is an open source and free official security scanner GUI for NMAP // This is downloaded in my Windows 11 to be used in this week's lab
+**OBJECTIVE**
+- Do 10 enumeration challenges out of 30 with Windows as the Attacker and Metasploitable2 as the Victim
 
 ---
 
-# Background
+# BACKGROUND
+
+| Tool | Purpose | Description |
+| :--- | :--- | :--- |
+| **Zenmap** | Scanning | Open source and free official security scanner GUI for NMAP // This is downloaded in my Windows 11 to be used in this week's lab |
+| **Metasploitable2** | Vulnerable Machine | Metasploitable 2 is an intentionally vulnerable Linux virtual machine designed for security training and testing |
 
 **ATTACKER (Windows)**
 - Attacker Host IP: `192.168.64.4`
@@ -17,7 +22,6 @@
 What is enumeration?
 - Enumeration is the systematic process of extracting detailed information from a target system, such as usernames, hostnames, network shares, and service versions, by establishing active connections to its open ports. In the context of this lab, it serves as the bridge between initial scanning and actual exploitation, allowing a security professional to map out the attack surface and identify specific misconfigurations or vulnerabilities in services like SMB, FTP, and RPC.
 
-- Metasploitable 2 is an intentionally vulnerable Linux virtual machine designed for security training and testing.
 
 
 --- 
