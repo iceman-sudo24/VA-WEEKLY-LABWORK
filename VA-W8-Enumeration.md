@@ -1,7 +1,7 @@
 # VA-W8-ENUMERATION
 
-- Windows Host IP: 192.168.64.4
-- Victim Metasploitable2 IP: 192.168.64.3
+- Windows Host IP: `192.168.64.4`
+- Victim Metasploitable2 IP: `192.168.64.3`
 
 --- 
 
