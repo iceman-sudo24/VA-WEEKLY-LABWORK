@@ -19,10 +19,8 @@
 - Victim IP: `192.168.64.3` 
 - Victim OS: Linux
 
-What is enumeration?
+**What is enumeration?**
 - Enumeration is the systematic process of extracting detailed information from a target system, such as usernames, hostnames, network shares, and service versions, by establishing active connections to its open ports. In the context of this lab, it serves as the bridge between initial scanning and actual exploitation, allowing a security professional to map out the attack surface and identify specific misconfigurations or vulnerabilities in services like SMB, FTP, and RPC.
-
-
 
 --- 
 
