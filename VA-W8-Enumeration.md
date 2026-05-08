@@ -28,20 +28,34 @@
 - FTP - vsftpd 2.3.4
 
 ---
+
 ## Challenge 10
 <img width="499" height="354" alt="Screenshot 2026-05-09 at 4 33 12 AM" src="https://github.com/user-attachments/assets/32255a46-9032-4d69-b5a1-599b4c6682cd" />
 
+---
+
+## challenge 13:
+<img width="644" height="423" alt="Screenshot 2026-05-09 at 4 58 09 AM" src="https://github.com/user-attachments/assets/a06b6f35-696d-4582-ba0a-d00a2cb8138f" />
 
 ---
 
-challenge 11:
-<img width="878" height="676" alt="Screenshot 2026-05-09 at 4 35 05 AM" src="https://github.com/user-attachments/assets/4d9ddbb7-9f95-4a5d-9a88-618ebb88dbf6" />
-
-challenge 19:
+## Challenge 19:
 <img width="880" height="676" alt="Screenshot 2026-05-09 at 4 36 15 AM" src="https://github.com/user-attachments/assets/275bf636-82f1-4f0a-b904-734dfce23ca1" />
 
-challenge 17:
+---
+
+## Challenge 17:
 <img width="841" height="795" alt="Screenshot 2026-05-09 at 4 40 08 AM" src="https://github.com/user-attachments/assets/eaa51454-4fec-4ecb-8f0c-527c33257008" />
 
-challenge 3:
+---
+
+## Challenge 3:
 <img width="591" height="368" alt="Screenshot 2026-05-09 at 4 44 46 AM" src="https://github.com/user-attachments/assets/88c37f36-4462-4065-957a-5bd15fcc40b7" />
+
+---
+
+## Challenge 11:
+<img width="878" height="676" alt="Screenshot 2026-05-09 at 4 35 05 AM" src="https://github.com/user-attachments/assets/4d9ddbb7-9f95-4a5d-9a88-618ebb88dbf6" />
+<img width="632" height="816" alt="Screenshot 2026-05-09 at 4 52 24 AM" src="https://github.com/user-attachments/assets/6290fdae-67f1-48e4-9837-25548c522373" />
+<img width="625" height="857" alt="Screenshot 2026-05-09 at 4 54 04 AM" src="https://github.com/user-attachments/assets/544f813f-9b74-4273-a105-42f22c584ef7" />
+<img width="602" height="860" alt="Screenshot 2026-05-09 at 4 54 39 AM" src="https://github.com/user-attachments/assets/8109e3e4-4bbd-4dd8-805a-b3f89698c2f5" />
