@@ -22,6 +22,13 @@
 **What is enumeration?**
 - Enumeration is the systematic process of extracting detailed information from a target system, such as usernames, hostnames, network shares, and service versions, by establishing active connections to its open ports. In the context of this lab, it serves as the bridge between initial scanning and actual exploitation, allowing a security professional to map out the attack surface and identify specific misconfigurations or vulnerabilities in services like SMB, FTP, and RPC.
 
+# PREREQUISITES
+1. Download and prepare a Windows (10 or 11) machine to serve as the attacker
+2. Download and prepare Metasploitable2 to serve as the victim
+3. Download Zenmap on the Windows attacker machine
+4. Start both machines up and ping the victim IP on the attacker machine to ensure there is a 
+connection
+
 --- 
 
 ## Attacker and Victim IP's
@@ -30,33 +37,43 @@
 
 ---
 
-## 1. Challenge 1
+## 1. Challenge 1 - NetBIOS Enumeration
 <img width="520" height="360" alt="Screenshot 2026-05-09 at 4 13 58 AM" src="https://github.com/user-attachments/assets/45975799-fa81-4885-b5ca-fd65e5f14ea5" />
 
 ---
 
-## 2. Challenge 2
+## 2. Challenge 2 - Fast Nmap Scan
 <img width="677" height="678" alt="Screenshot 2026-05-09 at 4 18 38 AM" src="https://github.com/user-attachments/assets/46d4383a-dc26-4bb9-8b1a-3a39727ad87d" />
 
 ---
 
-## 3. Challenge 3
+## 3. Challenge 3 - DNS Records
 <img width="591" height="368" alt="Screenshot 2026-05-09 at 4 44 46 AM" src="https://github.com/user-attachments/assets/88c37f36-4462-4065-957a-5bd15fcc40b7" />
 
 ---
 
-## 4. Challenge 5
+## 4. Challenge 5 - TTL OS Fingerprinting
 <img width="578" height="299" alt="Screenshot 2026-05-09 at 4 20 56 AM" src="https://github.com/user-attachments/assets/03a44421-5525-420d-b717-c79aff01df4a" />
 
+- By comparing this value to known defaults, you can infer the probable OS. 
+  - For example, Windows typically starts with TTL 128, while Linux/Unix/macOS often use 64
+ 
+- Values are as expected as we can see the TTL (Time to live) value to be 64 which suggests that the OS of the victim is Linux / Unix (which matches with the victim's OS)
+
 ---
 
-## 5. Challenge 10
+## 5. Challenge 10 - Anonymous FTP Login
 <img width="499" height="354" alt="Screenshot 2026-05-09 at 4 33 12 AM" src="https://github.com/user-attachments/assets/32255a46-9032-4d69-b5a1-599b4c6682cd" />
 
+- I reached the expecteed outcome as the login succeeded and I was able to use the `ls` command to list readable directories on the victim
+
 ---
 
-## 6. challenge 13
+## 6. Challenge 13 - NFS Exports
 <img width="644" height="423" alt="Screenshot 2026-05-09 at 4 58 09 AM" src="https://github.com/user-attachments/assets/a06b6f35-696d-4582-ba0a-d00a2cb8138f" />
+
+- `showmount -e <IP>` did not work on my windows cmd so I opted to an nmap command
+-
 
 ---
 
