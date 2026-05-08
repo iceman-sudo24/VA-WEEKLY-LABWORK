@@ -1,6 +1,6 @@
 # VA-W8-ENUMERATION
 **OBJECTIVE**
-- Do 10 enumeration challenges out of 30 with Windows as the Attacker and Metasploitable2 as the Victim
+- Do a minimum of 10 enumeration challenges out of 30 with Windows as the Attacker and Metasploitable2 as the Victim
 
 ---
 
