@@ -49,6 +49,7 @@ connection
 <img width="677" height="678" alt="Screenshot 2026-05-09 at 4 18 38 AM" src="https://github.com/user-attachments/assets/46d4383a-dc26-4bb9-8b1a-3a39727ad87d" />
 
 - `-F` Stands for "Fast." It limits the scan to the 100 most common ports instead of the default 1,000.
+- The `-T4` flag is an "Aggressive" timing template that speeds up scans by reducing wait times and increasing parallelism, making it the standard choice for fast, reliable modern networks where stealth is not a primary concern.
 
 ---
 
