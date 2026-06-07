@@ -226,7 +226,7 @@ This TryHackMe room looks at identifying and analyzing a malicious phishing emai
 
 **Tools Used**
 - KaliLinux VM (to do the room)
-- Mousepad Text Editor
+- KaliLinux Text Editor
 - IPLocator (iplocation.net)
 - MXToolBox Email Analyzer
 - CyberChef Decoder
@@ -240,15 +240,36 @@ This TryHackMe room looks at identifying and analyzing a malicious phishing emai
 - Room Prerequisites
 
 - An email file was downloaded (`.eml`) along with a attachment for the email (`.htm`) which was used through this room
-- <img width="353" height="216" alt="Screenshot 2026-06-07 at 9 07 10 PM" src="https://github.com/user-attachments/assets/24287fcd-4b5b-4363-8cbb-08f49b955b1e" />
+<img width="353" height="216" alt="Screenshot 2026-06-07 at 9 07 10 PM" src="https://github.com/user-attachments/assets/24287fcd-4b5b-4363-8cbb-08f49b955b1e" />
 
+---
 
 # Task 3: Email Headers
-This task focuses on analyzing the metadata of the suspicious `.eml` file (URGENTParrotPostAccountUpdateRequired.eml) using a text editor in my KaliVM.
+This task focuses on analyzing the metadata of the suspicious `.eml` file (URGENTParrotPostAccountUpdateRequired.eml) using a text editor in the KaliVM. We open the suspicious .eml file (URGENTParrotPostAccountUpdateRequired.eml) using the KaliLinux (mousepad) text editor and copy the following contents into an online header analyzer like MXToolbox to decode it in Base64.
 
-Layman Explanation: Think of an email header like the official shipping label and postal stamps on a physical package. While you usually only see the "From" and "To" names on the outside, looking at the hidden raw text reveals every single post office (mail server) the package passed through, the precise timestamp it was stamped, and special instructions on who actually gets the mail if you reply.
+---
 
-Key Findings: Attackers frequently fake ("spoof") the standard From header to look like a trusted company. However, inspecting the hidden Reply-To header or tracking the Source IP Address through geographic lookup tools reveals the actual origin of the message. Custom tracking fields prefixed with X- also provide unique footprint data left behind by the sender's infrastructure.
+<img width="1280" height="720" alt="Screenshot 2026-06-07 at 8 19 06 PM" src="https://github.com/user-attachments/assets/6a440a27-3817-4ff9-a4dc-427ba31d7d4b" />
+<img width="1645" height="392" alt="Screenshot 2026-06-07 at 7 46 02 PM" src="https://github.com/user-attachments/assets/6d0fa438-6bb0-488d-8f8d-511b35980af4" />
+<img width="577" height="481" alt="Screenshot 2026-06-07 at 7 45 02 PM" src="https://github.com/user-attachments/assets/92d161dc-3645-430b-8384-6b17e02c9f16" />
+
+---
+
+- Step 1: Scan the headers for the From: line. Attackers frequently fake ("spoof") this to look like a trusted company.
+- Step 2: Look closely for a Reply-To: header. This is where the trick falls apart. Even if the email says it is from a trusted company, the Reply-To header dictates the actual destination where the victim's response will be sent.
+- Step 3: Inspect the custom headers. These are extra fields starting with X- (like X-Mailer or X-Spam-Status) left behind by the mail servers or the specific software the attacker used to blast out the email.
+
+The IP involved was located with iplocation.net where the IP was entered to find out the IP origins.
+
+<img width="200" height="89" alt="Screenshot 2026-06-07 at 9 30 04 PM" src="https://github.com/user-attachments/assets/80e26360-bbe4-411d-8c96-987d90034845" />
+
+
+---
+The comprehensive results of the Email Analyzer provided the answers for Question 2 and 3 below
+<img width="470" height="35" alt="Screenshot 2026-06-07 at 7 57 07 PM" src="https://github.com/user-attachments/assets/caf2176b-9ff7-4d20-a68f-d71a30505e02" />
+<img width="341" height="31" alt="Screenshot 2026-06-07 at 7 45 39 PM" src="https://github.com/user-attachments/assets/637d47d8-e696-4897-9231-550c59f4746b" />
+
+---
 
 **TASK 3 QUESTIONS**
 1) According to the IP address, what country is the sending email server associated with?
@@ -259,6 +280,19 @@ Key Findings: Attackers frequently fake ("spoof") the standard From header to lo
 - ANSWER: `THM{y0u_f0und_7h3_h34d3r}`
 
 # Task 4: Email Attachment Analysis
+Instead of opening the file in a browser, we open it safely inside a text editor to look at the raw source code. Right away, the web page isn't written in normal code and instead looks like a massive, scrambled block of random letters and numbers.
+
+- Step 1: Identify the scrambling technique. The block uses a standard character set typical of Base64 encoding.
+- Step 2: Look at the execution trigger. We locate a small JavaScript snippet that reads this scrambled block and passes it into a built-in browser decoding function—specifically atob()—which instantly translates the gibberish back into a live webpage.
+- Step 3: Extract the hidden artifacts. By running this scrambled block through a decoding tool like CyberChef, we reveal the clean code. Hidden inside the newly revealed code, we find standard developer comments (<!-- comment -->) that contain yet another layer of encoded text to dig through.
+
+---
+
+<img width="1280" height="720" alt="Screenshot 2026-06-07 at 8 24 13 PM" src="https://github.com/user-attachments/assets/5a980388-d886-484e-8784-ea7b39c96fa6" />
+<img width="327" height="130" alt="Screenshot 2026-06-07 at 8 24 39 PM" src="https://github.com/user-attachments/assets/e895411d-93b8-4e98-ac94-d0ccdbfbaa46" />
+<img width="978" height="623" alt="Screenshot 2026-06-07 at 8 24 51 PM" src="https://github.com/user-attachments/assets/37f5f99b-f6ec-4fb3-8ea0-f2e2229f3b3b" />
+
+---
 
 **TASK 4 QUESTIONS**
 1) What encoding scheme is used to obfuscate the web page contents?
@@ -269,18 +303,46 @@ Key Findings: Attackers frequently fake ("spoof") the standard From header to lo
 - ANSWER: `THM{d0ubl3_3nc0d3d}`
 
 # Task 5: HTML Obsfucation
+Looking at the decoded HTML code from the previous step, the text still looks bizarre. The attacker didn't write normal letters; instead, they replaced standard text with strings of numbers and semicolons (e.g., &#x4c;).
+
+- Step 1: Locate the form block stretching from the <h1> to the </form> tags.
+- Step 2: Isolate the heavily obfuscated text string and paste it into CyberChef, using the "From HTML Entity" recipe.
+- Step 3: Analyze the output. Once the HTML entities are converted back into plain text, look directly for the HTML <form> tag. Inside it, the action attribute explicitly names the exact destination URL where the typed credentials are sent.
 
 **TASK 5 QUESTIONS**
 1) After decoding the HTML Entity characters, what is the text inside of the `<h1>` tag?
 - ANSWER: ParrotPost Secure Webmail Login
 
+<img width="252" height="73" alt="Screenshot 2026-06-07 at 8 25 31 PM" src="https://github.com/user-attachments/assets/641bb578-e37d-472d-82b1-814a6f0b1f52" />
+
+
 # Task 6: CSS Obsfucation 
+We shift our focus to the Cascading Style Sheets (CSS) code embedded in the document to understand how the attacker hides elements or forces user action.
+
+- Step 1: Review the style blocks to see if certain elements are hidden or forced to take up the entire screen.
+- Step 2: Track how the styling ties into background interactions. The investigation highlights client-side behaviors where specific JavaScript browser properties (like window redirection commands) are triggered to seamlessly hijack and route the user to an external site without throwing up warning flags.
 
 **TASK 6 QUESTIONS**
 1) What is the reverse of CSS Minify?
 - ANSWER: CSS Beautify
 
+<img width="477" height="137" alt="Screenshot 2026-06-07 at 8 26 01 PM" src="https://github.com/user-attachments/assets/f9af813d-5e06-4ddc-bd79-2c307aa17ee4" />
+
 # Task 7: JavaScript Obsfucation 
+The JavaScript code handling the login form is crammed into a dense, unreadable wall of text with no spaces, squished together onto a single line.
+
+- Step 1: Copy the massive, single-line script block.
+- Step 2: Paste it into a tool like JSBeautifier to restore standard indentation and line breaks.
+- Step 3: Trace the structural flow. With the code neatly spaced out, we easily locate the primary validation function. This function sits in the middle of the workflow, checking to ensure the victim typed a real password and a properly formatted email before letting the page submit.
+
+---
+
+<img width="1523" height="464" alt="Screenshot 2026-06-07 at 8 32 55 PM" src="https://github.com/user-attachments/assets/172e2e3f-1908-4a2f-a50a-698afcd3559e" />
+<img width="1551" height="940" alt="Screenshot 2026-06-07 at 8 33 06 PM" src="https://github.com/user-attachments/assets/768c7f1b-5937-41a5-97ea-37f658949e00" />
+<img width="230" height="101" alt="Screenshot 2026-06-07 at 8 35 31 PM" src="https://github.com/user-attachments/assets/b8381455-39ab-4be0-a769-a3bf21ae965d" />
+<img width="400" height="99" alt="Screenshot 2026-06-07 at 8 35 36 PM" src="https://github.com/user-attachments/assets/f988e1e3-51cf-4df1-8a10-7dd2d824ba44" />
+
+---
 
 **TASK 7 QUESTIONS**
 1) What is the URL that receives the login request when the login form is submitted?
@@ -289,6 +351,31 @@ Key Findings: Attackers frequently fake ("spoof") the standard From header to lo
 - ANSWER: `window.location.href`
 
 # Task 8: Putting It All Together
+We open ParrotPostACTIONREQUIRED.htm locally in our isolated browser. Before doing anything else, we right-click and open the Developer Tools, switching directly to the Network Tab.
+
+<img width="803" height="676" alt="Screenshot 2026-06-07 at 9 53 29 PM" src="https://github.com/user-attachments/assets/fda8dd5b-8200-4795-b10e-03d862b157ff" />
+
+---
+
+- Step 1: Type test data into the email and password fields and hit the login button.
+<img width="364" height="319" alt="Screenshot 2026-06-07 at 9 52 44 PM" src="https://github.com/user-attachments/assets/75ee7292-afc1-421e-a8d7-e812f6b17517" />
+
+---
+
+- Step 2: Stop and check the Network Tab. Look for an asynchronous background data packet flying outbound. We spot a GET request hitting an endpoint named /cred-- capture.php. Inspecting the payload or response headers of this transaction drops our hidden flag.
+<img width="626" height="360" alt="Screenshot 2026-06-07 at 9 55 21 PM" src="https://github.com/user-attachments/assets/c4c108a5-d786-4915-b2d6-eda24e293c11" />
+
+---
+
+- Step 3: Use the path found in the network traffic to navigate backward into the attacker's server directory.
+<img width="731" height="324" alt="Screenshot 2026-06-07 at 9 56 00 PM" src="https://github.com/user-attachments/assets/b6ec5e7d-7f13-4d4d-a144-8345ef28a1c9" />
+
+---
+
+- Step 4: Open the exposed log file (the database repository where stolen data lands). Because the attacker lazily stored the stolen goods in a plain text file, we can read the harvest directly, exposing the plaintext password of an earlier victim, Chris Smith.
+<img width="671" height="421" alt="Screenshot 2026-06-07 at 9 56 44 PM" src="https://github.com/user-attachments/assets/58760225-91ca-45cd-9514-788ab1e2ad59" />
+
+---
 
 **TASK 7 QUESTIONS**
 1) What is the flag you receive after sending fake credentials to the /cred-capture.php endpoint?
