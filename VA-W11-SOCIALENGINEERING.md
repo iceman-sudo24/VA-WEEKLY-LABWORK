@@ -309,6 +309,8 @@ Looking at the decoded HTML code from the previous step, the text still looks bi
 - Step 2: Isolate the heavily obfuscated text string and paste it into CyberChef, using the "From HTML Entity" recipe.
 - Step 3: Analyze the output. Once the HTML entities are converted back into plain text, look directly for the HTML <form> tag. Inside it, the action attribute explicitly names the exact destination URL where the typed credentials are sent.
 
+---
+
 **TASK 5 QUESTIONS**
 1) After decoding the HTML Entity characters, what is the text inside of the HTML `h1` tag?
 - ANSWER: ParrotPost Secure Webmail Login
@@ -321,6 +323,8 @@ We shift our focus to the Cascading Style Sheets (CSS) code embedded in the docu
 
 - Step 1: Review the style blocks to see if certain elements are hidden or forced to take up the entire screen.
 - Step 2: Track how the styling ties into background interactions. The investigation highlights client-side behaviors where specific JavaScript browser properties (like window redirection commands) are triggered to seamlessly hijack and route the user to an external site without throwing up warning flags.
+
+---
 
 **TASK 6 QUESTIONS**
 1) What is the reverse of CSS Minify?
