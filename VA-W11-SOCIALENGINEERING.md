@@ -51,6 +51,8 @@ use of URL shortening services to hide the final destionation of malicious links
 - ANSWER: Amazing Stuff
 - <img width="279" height="308" alt="image" src="https://github.com/user-attachments/assets/a7e39945-7341-4341-ad08-0488fe40e126" />
 
+---
+
 ## Task 3: Track Your Package
 This section investigates an email that mimics a formal shipping notification that tricks
 receivers with a sense of urgency.
@@ -83,6 +85,8 @@ package status
 - ANSWER: devret[.]xyz 
 - Defanging the URL is making it non-functional and safe for sharing, in this case square-bracketing the
   period character '.'
+
+---
 
 ## Task 4: Download Document Here
 This task involves analyzing a phishing campaign which utilizes a multi-stage redirection chain
@@ -118,6 +122,8 @@ to harvest user credentials
 1) The attacker deployed a fake portal to capture and exfiltrate user credentials. What is this type of attack called?
 - ANSWER: Credential Harvesting
 
+---
+
 ## Task 5: Your Account Is On Hold
 This task involves examining an email that is impersontating a household brand that is demanding
 immediate action from the recipient.
@@ -148,6 +154,8 @@ Email Body and Attachment Analysis:
 1) What is the actual sender email address hidden behind the Netllx billing display name?
 - ANSWER: z99@musacombi.online
 - <img width="319" height="87" alt="image" src="https://github.com/user-attachments/assets/e8cb90d6-c171-4698-aa66-0cb0ad92ab1e" />
+
+---
 
 ## Task 6: Your Recent Purchase
 This task looks at and analyzes a phising attempt that disguises itself as a billing notification from a major service provider (Apple Support)
@@ -183,6 +191,8 @@ This task looks at and analyzes a phising attempt that disguises itself as a bil
 2) What is the file extension of the attachment?
 - ANSWER: `.dot`
 
+---
+
 ## Task 7: Scheduled Shipment
 This part looks at a phishing attempt that disguises as a global shipping notification
 using spoofed addresses and branded HTML to look real
@@ -210,6 +220,8 @@ using spoofed addresses and branded HTML to look real
 and execute a malicious payload named `regasms.exe`
 - If successfully executed it could create a backdoor, steal data and put ransomware
 on the vicitm's device
+
+---
 
 **TASK 7 QUESTION**
 1) What is the name of the executable that the Excel attachment attempts to run?
