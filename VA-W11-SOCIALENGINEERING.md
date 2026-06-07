@@ -310,7 +310,7 @@ Looking at the decoded HTML code from the previous step, the text still looks bi
 - Step 3: Analyze the output. Once the HTML entities are converted back into plain text, look directly for the HTML <form> tag. Inside it, the action attribute explicitly names the exact destination URL where the typed credentials are sent.
 
 **TASK 5 QUESTIONS**
-1) After decoding the HTML Entity characters, what is the text inside of the `<h1>` tag?
+1) After decoding the HTML Entity characters, what is the text inside of the HTML `h1` tag?
 - ANSWER: ParrotPost Secure Webmail Login
 
 <img width="252" height="73" alt="Screenshot 2026-06-07 at 8 25 31 PM" src="https://github.com/user-attachments/assets/641bb578-e37d-472d-82b1-814a6f0b1f52" />
