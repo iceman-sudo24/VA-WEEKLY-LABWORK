@@ -49,7 +49,7 @@ use of URL shortening services to hide the final destionation of malicious links
 **TASK 2 QUESTION**
 1) Who is listed as the Merchant in the email body?**
 - ANSWER: Amazing Stuff
-- <img width="279" height="308" alt="image" src="https://github.com/user-attachments/assets/a7e39945-7341-4341-ad08-0488fe40e126" />
+<img width="279" height="308" alt="image" src="https://github.com/user-attachments/assets/a7e39945-7341-4341-ad08-0488fe40e126" />
 
 ---
 
