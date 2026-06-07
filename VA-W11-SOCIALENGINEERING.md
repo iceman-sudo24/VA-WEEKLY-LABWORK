@@ -129,43 +129,67 @@ Email Body and Attachment Analysis:
 - ANSWER: z99@musacombi.online
 - <img width="319" height="87" alt="image" src="https://github.com/user-attachments/assets/e8cb90d6-c171-4698-aa66-0cb0ad92ab1e" />
 
-
 ## Task 6: Your Recent Purchase
+This task looks at and analyzes a phising attempt that disguises itself as a billing notification from a major service provider (Apple Support)
+
+**Phishing Techniques Used**
+- Spoofed email address
+- Recipient is BCCed: The victim is not directly sent the email
+- Urgency
+- Poor grammar and typos
+- Attachments: The email contains a .dot (opens in new tab) file (Microsoft Word Template), which is an unusual format for a receipt
+
+**First Observations:**
+- Recipient is told to act quickly to resolve a purchase they did not make
+- Their display name does not match user and domain
+- The recipient was not directly emailed but BCCed
+    - a feature in email that allows you to send a copy of a message to recipients without revealing their  
+    addresses to others.
+
+**Analyzing Attachment**
+- Email body is completely blank
+- There is an attachment in the form of a `.dot` file
+- Interacting with the large image redirects the recepient to a phishing site
+
+---
+
+**TASK 6 QUESTIONS**
+1) What does the acronym BCC stand for?
+- ANSWER: Blind Carbon Copy
+2) What is the file extension of the attachment?
+- ANSWER: `.dot`
 
 ## Task 7: Scheduled Shipment
+This part looks at a phishing attempt that disguises as a global shipping notification
+using spoofed addresses and branded HTML to look real
 
+**Phishing Techniques Used**
+- Spoofed email address: The sender's display name is set to DHL Express
+- Brand impersonation
+- Attachments: An Excel document that triggers executable code upon opening
 
+**First Observations:**
+- Email subject gives the impression that DHL will be shipping a package
+- The display name does not match the user and domain
+- The HTML in the email body is designed to look like it was sent from DHL
+  
+<img width="815" height="256" alt="image" src="https://github.com/user-attachments/assets/d925a8c0-9e0b-4464-8b30-21779b4733f6" />
 
+---
 
+**Email Body and Attachment:**
+- The primary concern is in the attached `.xlsx` file (excel file)
+- The file contains many red flags and suspicious elements
 
+**The EXE**
+- When the link in the excel document is clicked, it will try to download
+and execute a malicious payload named `regasms.exe`
+- If successfully executed it could create a backdoor, steal data and put ransomware
+on the vicitm's device
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**TASK 7 QUESTION**
+1) What is the name of the executable that the Excel attachment attempts to run?
+- ANSWER: `regasms.exe`
 
 ---
 
