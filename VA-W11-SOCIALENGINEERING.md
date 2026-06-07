@@ -259,7 +259,7 @@ This TryHackMe room looks at identifying and analyzing a malicious phishing emai
 # Task 5: HTML Obsfucation
 
 **TASK 5 QUESTIONS**
-1) After decoding the HTML Entity characters, what is the text inside of the <h1> tag?
+1) After decoding the HTML Entity characters, what is the text inside of the (<h1>) tag?
 - ANSWER: ParrotPost Secure Webmail Login
 
 # Task 6: CSS Obsfucation 
