@@ -1,4 +1,4 @@
-<img width="279" height="308" alt="image" src="https://github.com/user-attachments/assets/4391d69a-d7b1-48be-a805-167c8142fb3a" /># First Exercise: Phishing Emails In Action (TryHackMe)
+# First Exercise: Phishing Emails In Action (TryHackMe)
 
 ## Task 1: Introduction
 - This section summarized the entire course and provided four objectives:
