@@ -44,8 +44,7 @@ use of URL shortening services to hide the final destionation of malicious links
 
 **TASK 1 QUESTION: Who is listed as the Merchant in the email body?**
 - ANSWER: Amazing Stuff
-
-<img width="279" height="308" alt="image" src="https://github.com/user-attachments/assets/a7e39945-7341-4341-ad08-0488fe40e126" />
+- <img width="279" height="308" alt="image" src="https://github.com/user-attachments/assets/a7e39945-7341-4341-ad08-0488fe40e126" />
 
 ## Task 3: Track Your Package
 This section investigates an email that mimics a formal shipping notification that tricks
@@ -126,8 +125,10 @@ Email Body and Attachment Analysis:
 
 ---
 
-**TASK 5 QUESTION: The attacker deployed a fake portal to capture and exfiltrate user credentials. What is this type of attack called?**
-- ANSWER: Credential Harvesting
+**TASK 5 QUESTION: What is the actual sender email address hidden behind the Netllx billing display name?**
+- ANSWER: z99@musacombi.online
+- <img width="319" height="87" alt="image" src="https://github.com/user-attachments/assets/e8cb90d6-c171-4698-aa66-0cb0ad92ab1e" />
+
 
 ## Task 6: Your Recent Purchase
 
