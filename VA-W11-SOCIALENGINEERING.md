@@ -1,4 +1,4 @@
-# First Exercise: Phishing Emails In Action (TryHackMe)
+<img width="797" height="170" alt="image" src="https://github.com/user-attachments/assets/6246e0d5-9c12-47db-a20f-43f192679e86" /># First Exercise: Phishing Emails In Action (TryHackMe)
 
 ## Task 1: Introduction
 - This section summarized the entire course and provided four objectives:
@@ -26,6 +26,10 @@ use of URL shortening services to hide the final destionation of malicious links
 - Mismatched from address
 - Unusual email recipient address and not a normal yahoo email domain
 
+<img width="804" height="141" alt="image" src="https://github.com/user-attachments/assets/b58bfe69-125d-4195-b6c9-46df4676c875" />
+
+---
+
 **Email Body Analysis:**
 - No attachments
 - Only interactive element is cancel order button
@@ -42,7 +46,8 @@ use of URL shortening services to hide the final destionation of malicious links
 
 ---
 
-**TASK 1 QUESTION: Who is listed as the Merchant in the email body?**
+**TASK 2 QUESTION**
+1) Who is listed as the Merchant in the email body?**
 - ANSWER: Amazing Stuff
 - <img width="279" height="308" alt="image" src="https://github.com/user-attachments/assets/a7e39945-7341-4341-ad08-0488fe40e126" />
 
@@ -61,6 +66,10 @@ package status
 - The display name does not match the actual sender address
 - There is a hyperlink in the email body that matches the subject line, although we do not know where it directs to just yet
 
+<img width="797" height="170" alt="image" src="https://github.com/user-attachments/assets/ccad0833-c135-4439-9554-1c9a4e0e2aae" />
+
+---
+
 **Hyperlink Tracking:**
 - Source of the email message contained a Tracking.png image file which would send
   back information to the spammers server 
@@ -69,7 +78,8 @@ package status
 
 ---
 
-**TASK 3 QUESTION: What root domain does the hyperlink in the above example point to? Be sure to defang the URL.**
+**TASK 3 QUESTION**
+1) What root domain does the hyperlink in the above example point to? Be sure to defang the URL.
 - ANSWER: devret[.]xyz 
 - Defanging the URL is making it non-functional and safe for sharing, in this case square-bracketing the
   period character '.'
@@ -89,6 +99,10 @@ to harvest user credentials
 - Expiration date (for sense of urgency)
 - Download Document here button (button to download a fax)
 
+<img width="798" height="341" alt="image" src="https://github.com/user-attachments/assets/0f0c0868-10d3-4767-9ba1-d9f0e4c54050" />
+
+---
+
 **Clicking The Button:**
 - User redirected to landing page that mimics OneDrive share
 - Interacting with the buttons redirects the user to a fake OneDrive site
@@ -100,7 +114,8 @@ to harvest user credentials
 
 ---
 
-**TASK 4 QUESTION: The attacker deployed a fake portal to capture and exfiltrate user credentials. What is this type of attack called?**
+**TASK 4 QUESTION**
+1) The attacker deployed a fake portal to capture and exfiltrate user credentials. What is this type of attack called?
 - ANSWER: Credential Harvesting
 
 ## Task 5: Your Account Is On Hold
@@ -119,13 +134,18 @@ immediate action from the recipient.
 - Display name does not match user and domain
 - Email uses rendered HTML to impersonate Netflx
 
+<img width="793" height="228" alt="image" src="https://github.com/user-attachments/assets/e5676217-42cd-4a07-8912-5a1a3551c832" />
+
+---
+
 Email Body and Attachment Analysis:
 - Suspicious PDF file attached
 - Attachment contains embedded link titled "Update Payment Account"
 
 ---
 
-**TASK 5 QUESTION: What is the actual sender email address hidden behind the Netllx billing display name?**
+**TASK 5 QUESTION**
+1) What is the actual sender email address hidden behind the Netllx billing display name?
 - ANSWER: z99@musacombi.online
 - <img width="319" height="87" alt="image" src="https://github.com/user-attachments/assets/e8cb90d6-c171-4698-aa66-0cb0ad92ab1e" />
 
@@ -145,6 +165,10 @@ This task looks at and analyzes a phising attempt that disguises itself as a bil
 - The recipient was not directly emailed but BCCed
     - a feature in email that allows you to send a copy of a message to recipients without revealing their  
     addresses to others.
+
+<img width="795" height="122" alt="image" src="https://github.com/user-attachments/assets/f1fa490f-ccd6-4409-823d-a854002e33e7" />
+
+---
 
 **Analyzing Attachment**
 - Email body is completely blank
