@@ -224,6 +224,15 @@ on the vicitm's device
 # Second Exercise: ParrotPost: Phishing Analysis (TryHackMe)
 This TryHackMe room looks at identifying and analyzing a malicious phishing email through visual inspection, common header inspection tools, and manual deobfuscation.
 
+**Tools Used**
+- KaliLinux VM (to do the room)
+- Mousepad Text Editor
+- IPLocator (iplocation.net)
+- MXToolBox Email Analyzer
+- CyberChef Decoder
+- Website Inspector
+
+
 **Learning Objectives**
 - Understand what email headers are and familiarize yourself with common headers.
 - Utilize tools for inspecting and analyzing suspicious emails and attachments.
@@ -235,8 +244,11 @@ This TryHackMe room looks at identifying and analyzing a malicious phishing emai
 
 
 # Task 3: Email Headers
+This task focuses on analyzing the metadata of the suspicious `.eml` file (URGENTParrotPostAccountUpdateRequired.eml) using a text editor in my KaliVM.
 
+Layman Explanation: Think of an email header like the official shipping label and postal stamps on a physical package. While you usually only see the "From" and "To" names on the outside, looking at the hidden raw text reveals every single post office (mail server) the package passed through, the precise timestamp it was stamped, and special instructions on who actually gets the mail if you reply.
 
+Key Findings: Attackers frequently fake ("spoof") the standard From header to look like a trusted company. However, inspecting the hidden Reply-To header or tracking the Source IP Address through geographic lookup tools reveals the actual origin of the message. Custom tracking fields prefixed with X- also provide unique footprint data left behind by the sender's infrastructure.
 
 **TASK 3 QUESTIONS**
 1) According to the IP address, what country is the sending email server associated with?
