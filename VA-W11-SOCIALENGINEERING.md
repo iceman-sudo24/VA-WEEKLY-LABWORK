@@ -217,4 +217,77 @@ on the vicitm's device
 
 ---
 
+<img width="1267" height="876" alt="Screenshot 2026-06-07 at 8 54 27 PM" src="https://github.com/user-attachments/assets/92c0837b-ce8c-4302-8b8b-95d035976a53" />
+
+---
+
 # Second Exercise: ParrotPost: Phishing Analysis (TryHackMe)
+This TryHackMe room looks at identifying and analyzing a malicious phishing email through visual inspection, common header inspection tools, and manual deobfuscation.
+
+**Learning Objectives**
+- Understand what email headers are and familiarize yourself with common headers.
+- Utilize tools for inspecting and analyzing suspicious emails and attachments.
+- Learn to recognize different obfuscation techniques employed in malicious HTML, CSS, and JavaScript code.
+- Room Prerequisites
+
+- An email file was downloaded (.eml) along with a attachment for the email (.htm) which was used through this room
+- <img width="353" height="216" alt="Screenshot 2026-06-07 at 9 07 10 PM" src="https://github.com/user-attachments/assets/24287fcd-4b5b-4363-8cbb-08f49b955b1e" />
+
+
+# Task 3: Email Headers
+
+
+
+**TASK 3 QUESTIONS**
+1) According to the IP address, what country is the sending email server associated with?
+- ANSWER: Latvia 
+2) If Paul replies to this email, which email address will his reply be sent to?
+- ANSWER: no-reply@postparr0t.thm
+3) What is the value of the custom header in the email?
+- ANSWER: THM{y0u_f0und_7h3_h34d3r}
+
+# Task 4: Email Attachment Analysis
+
+**TASK 4 QUESTIONS**
+1) What encoding scheme is used to obfuscate the web page contents?
+- ANSWER: base64 
+2) What is the built-in JavaScript function used to decode the web page before writing it to the page?
+- ANSWER: atob()
+3) After the initial base64 decoding, what is the value of the leftover base64 encoded comment?
+- ANSWER: THM{d0ubl3_3nc0d3d}
+
+# Task 5: HTML Obsfucation
+
+**TASK 5 QUESTIONS**
+1) After decoding the HTML Entity characters, what is the text inside of the <h1> tag?
+- ANSWER: ParrotPost Secure Webmail Login
+
+# Task 6: CSS Obsfucation 
+
+**TASK 6 QUESTIONS**
+1) What is the reverse of CSS Minify?
+- ANSWER: CSS Beautify
+
+# Task 7: JavaScript Obsfucation 
+
+**TASK 7 QUESTIONS**
+1) What is the URL that receives the login request when the login form is submitted?
+- ANSWER: http://evilparrot.thm:8080/cred-capture.php
+2) What is the JavaScript property that can redirect the browser to a new URL?
+- ANSWER: window.location.href
+
+# Task 8: Putting It All Together
+
+**TASK 7 QUESTIONS**
+1) What is the flag you receive after sending fake credentials to the /cred-capture.php endpoint?
+- ANSWER: THM{c4p7ur3d_y0ur_cr3d5}
+2) What is the path on the web server hosting the log of captured credentials?
+- ANSWER: /creds.txt
+3) Based on the log, what is Chris Smith's password?
+- ANSWER: FlyL1ke!A~Bird
+
+---
+
+<img width="1242" height="930" alt="Screenshot 2026-06-07 at 8 53 59 PM" src="https://github.com/user-attachments/assets/a975ac09-0a5d-481a-9304-5626f328b75d" />
+
+---
