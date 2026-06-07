@@ -230,7 +230,7 @@ This TryHackMe room looks at identifying and analyzing a malicious phishing emai
 - Learn to recognize different obfuscation techniques employed in malicious HTML, CSS, and JavaScript code.
 - Room Prerequisites
 
-- An email file was downloaded (.eml) along with a attachment for the email (.htm) which was used through this room
+- An email file was downloaded (`.eml`) along with a attachment for the email (`.htm`) which was used through this room
 - <img width="353" height="216" alt="Screenshot 2026-06-07 at 9 07 10 PM" src="https://github.com/user-attachments/assets/24287fcd-4b5b-4363-8cbb-08f49b955b1e" />
 
 
@@ -242,9 +242,9 @@ This TryHackMe room looks at identifying and analyzing a malicious phishing emai
 1) According to the IP address, what country is the sending email server associated with?
 - ANSWER: Latvia 
 2) If Paul replies to this email, which email address will his reply be sent to?
-- ANSWER: no-reply@postparr0t.thm
+- ANSWER: `no-reply@postparr0t.thm`
 3) What is the value of the custom header in the email?
-- ANSWER: THM{y0u_f0und_7h3_h34d3r}
+- ANSWER: `THM{y0u_f0und_7h3_h34d3r}`
 
 # Task 4: Email Attachment Analysis
 
@@ -252,9 +252,9 @@ This TryHackMe room looks at identifying and analyzing a malicious phishing emai
 1) What encoding scheme is used to obfuscate the web page contents?
 - ANSWER: base64 
 2) What is the built-in JavaScript function used to decode the web page before writing it to the page?
-- ANSWER: atob()
+- ANSWER: `atob()`
 3) After the initial base64 decoding, what is the value of the leftover base64 encoded comment?
-- ANSWER: THM{d0ubl3_3nc0d3d}
+- ANSWER: `THM{d0ubl3_3nc0d3d}`
 
 # Task 5: HTML Obsfucation
 
@@ -272,19 +272,19 @@ This TryHackMe room looks at identifying and analyzing a malicious phishing emai
 
 **TASK 7 QUESTIONS**
 1) What is the URL that receives the login request when the login form is submitted?
-- ANSWER: http://evilparrot.thm:8080/cred-capture.php
+- ANSWER: `http://evilparrot.thm:8080/cred-capture.php`
 2) What is the JavaScript property that can redirect the browser to a new URL?
-- ANSWER: window.location.href
+- ANSWER: `window.location.href`
 
 # Task 8: Putting It All Together
 
 **TASK 7 QUESTIONS**
 1) What is the flag you receive after sending fake credentials to the /cred-capture.php endpoint?
-- ANSWER: THM{c4p7ur3d_y0ur_cr3d5}
+- ANSWER: `THM{c4p7ur3d_y0ur_cr3d5}`
 2) What is the path on the web server hosting the log of captured credentials?
-- ANSWER: /creds.txt
+- ANSWER: `/creds.txt`
 3) Based on the log, what is Chris Smith's password?
-- ANSWER: FlyL1ke!A~Bird
+- ANSWER: `FlyL1ke!A~Bird`
 
 ---
 
